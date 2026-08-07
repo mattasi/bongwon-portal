@@ -1,0 +1,336 @@
+/* =====================================================
+   봉원초등학교 교직원 교육정보 포털 — 디자인 토큰
+   -----------------------------------------------------
+   Ink   #1E2A3A  깊은 남색 잉크 (헤드라인, 본문 강조)
+   Paper #F7F4EC  아이보리 종이 (배경)
+   Brass #A9823C  황동/골드 (시그니처 라인, 강조)
+   Rule  rgba(30,42,58,.14)  헤어라인
+   카테고리 5색은 파스텔 대신 깊은 보석톤으로 재정의
+   ===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700;900&family=Noto+Sans+KR:wght@400;500;600;700&display=swap');
+
+:root {
+  --ink: #1e2a3a;
+  --ink-soft: #5b6774;
+  --paper: #f7f4ec;
+  --paper-raise: #fffdf8;
+  --brass: #a9823c;
+  --brass-deep: #8a692e;
+  --rule: rgba(30, 42, 58, 0.14);
+
+  --blue-deep: #223a5e;   --blue-tint: #eaeff5;
+  --purple-deep: #4a3358; --purple-tint: #f1eef4;
+  --green-deep: #2c4a34;  --green-tint: #edf2ec;
+  --pink-deep: #6a2c40;   --pink-tint: #f5eced;
+  --yellow-deep: #6e4d1e; --yellow-tint: #f6f0e2;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; }
+
+body {
+  font-family: "Noto Sans KR", "Malgun Gothic", Arial, sans-serif;
+  background:
+    radial-gradient(ellipse at top, rgba(169,130,60,0.06), transparent 55%),
+    var(--paper);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  width: min(1360px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 40px 0 48px;
+}
+
+/* ---------- 헤더 : 교표(校標) 스타일 ---------- */
+.header {
+  width: min(640px, 86%);
+  margin: 0 auto 46px;
+  padding: 6px 0 22px;
+  text-align: center;
+  position: relative;
+}
+
+.header::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  margin-bottom: 16px;
+  background: linear-gradient(90deg, transparent, var(--brass) 18%, var(--brass) 82%, transparent);
+}
+
+.header h1 {
+  margin: 0;
+  color: var(--ink);
+  font-family: "Noto Serif KR", serif;
+  font-weight: 900;
+  font-size: clamp(22px, 2.6vw, 31px);
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+
+.header::after {
+  content: "";
+  display: block;
+  width: 46px;
+  height: 1px;
+  margin: 18px auto 0;
+  background: var(--brass);
+  position: relative;
+}
+
+/* ---------- 그리드 ---------- */
+.portal-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 22px;
+  align-items: start;
+}
+
+/* ---------- 카드 ---------- */
+.card {
+  background: var(--paper-raise);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(30, 42, 58, 0.04);
+  transition: box-shadow .18s ease, transform .18s ease;
+}
+
+.card:hover {
+  box-shadow: 0 10px 24px -10px rgba(30, 42, 58, 0.22);
+  transform: translateY(-2px);
+}
+
+.card h2 {
+  margin: 0;
+  min-height: 54px;
+  padding: 12px 10px 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fdfaf2;
+  font-family: "Noto Serif KR", serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+  text-align: center;
+  position: relative;
+}
+
+/* 카드 헤더 하단 얇은 골드 언더라인 — 시그니처 요소 */
+.card h2::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 28px;
+  height: 2px;
+  background: var(--brass);
+}
+
+.card a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 56px;
+  padding: 10px 12px;
+  color: var(--ink);
+  text-decoration: none;
+  border-top: 1px solid var(--rule);
+  text-align: center;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 15.5px;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  position: relative;
+  transition: background-color .14s ease, color .14s ease, padding-left .14s ease;
+}
+
+.card a:hover,
+.card a:focus-visible {
+  background-color: rgba(169, 130, 60, 0.09);
+  color: var(--brass-deep);
+}
+
+.card a:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: -2px;
+}
+
+.card a:active { background-color: rgba(169, 130, 60, 0.16); }
+
+/* ---------- 카테고리 색상 ---------- */
+.blue   { background: var(--blue-tint); }
+.blue   h2 { background: var(--blue-deep); }
+.blue   a { color: var(--blue-deep); }
+
+.purple { background: var(--purple-tint); }
+.purple h2 { background: var(--purple-deep); }
+.purple a { color: var(--purple-deep); }
+
+.green  { background: var(--green-tint); }
+.green  h2 { background: var(--green-deep); }
+.green  a { color: var(--green-deep); }
+
+.pink   { background: var(--pink-tint); }
+.pink   h2 { background: var(--pink-deep); }
+.pink   a { color: var(--pink-deep); }
+
+.yellow { background: var(--yellow-tint); }
+.yellow h2 { background: var(--yellow-deep); }
+.yellow a { color: var(--yellow-deep); }
+
+/* ---------- 푸터 ---------- */
+footer {
+  margin-top: 48px;
+  padding-top: 16px;
+  text-align: center;
+  color: var(--ink-soft);
+  font-size: 12.5px;
+  letter-spacing: 0.04em;
+  border-top: 1px solid var(--rule);
+}
+
+/* ---------- 반응형 ---------- */
+@media (max-width: 1000px) {
+  .portal-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (max-width: 700px) {
+  .page { width: min(100% - 18px, 600px); padding-top: 28px; }
+  .portal-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 13px; }
+  .header { width: 100%; }
+  .card h2 { font-size: 15px; min-height: 46px; }
+  .card a { font-size: 13px; min-height: 48px; }
+}
+
+@media (max-width: 430px) {
+  .portal-grid { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card, .card a { transition: none; }
+}
+
+/* ---------- 유틸리티 ---------- */
+.hidden { display: none !important; }
+
+/* ---------- 로그인 화면 ---------- */
+.auth-screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background:
+    radial-gradient(ellipse at top, rgba(169,130,60,0.08), transparent 55%),
+    var(--paper);
+}
+
+.auth-box {
+  width: min(380px, 100%);
+  background: var(--paper-raise);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  padding: 38px 34px 30px;
+  text-align: center;
+  box-shadow: 0 16px 36px -16px rgba(30, 42, 58, 0.24);
+  position: relative;
+}
+
+.auth-box::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, transparent, var(--brass) 18%, var(--brass) 82%, transparent);
+}
+
+.auth-box h2 {
+  margin: 0 0 4px;
+  font-family: "Noto Serif KR", serif;
+  font-weight: 900;
+  font-size: 21px;
+  color: var(--ink);
+}
+
+.auth-sub {
+  margin: 0 0 22px;
+  color: var(--ink-soft);
+  font-size: 13px;
+  letter-spacing: 0.02em;
+}
+
+.auth-box input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 15px;
+}
+
+.auth-box input:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: -1px;
+  border-color: var(--brass);
+}
+
+.auth-box button[type="submit"] {
+  width: 100%;
+  margin-top: 6px;
+  padding: 13px;
+  background: var(--ink);
+  color: #fdfaf2;
+  border: none;
+  border-radius: 2px;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: background-color .15s ease;
+}
+
+.auth-box button[type="submit"]:hover { background: var(--brass-deep); }
+.auth-box button[type="submit"]:disabled { opacity: .6; cursor: default; }
+
+.auth-error {
+  min-height: 18px;
+  margin: 12px 0 0;
+  color: #8a2e3a;
+  font-size: 13px;
+}
+
+/* ---------- 로그아웃 버튼 ---------- */
+.logout-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 6px 14px;
+  background: transparent;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  color: var(--ink-soft);
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 12.5px;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: border-color .15s ease, color .15s ease;
+}
+
+.logout-btn:hover {
+  border-color: var(--brass);
+  color: var(--brass-deep);
+}

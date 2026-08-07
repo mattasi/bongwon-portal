@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>봉원초등학교 교직원 교육정보 포털</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="authScreen" class="auth-screen">
+  <form id="loginForm" class="auth-box">
+    <h2>교직원 로그인</h2>
+    <p class="auth-sub">봉원초등학교 교육정보 포털</p>
+    <input type="email" id="loginEmail" placeholder="이메일" autocomplete="username" required>
+    <input type="password" id="loginPassword" placeholder="비밀번호" autocomplete="current-password" required>
+    <button type="submit">로그인</button>
+    <p id="loginError" class="auth-error" role="alert"></p>
+  </form>
+</div>
+
+<main class="page hidden" id="appContent">
+  <header class="header">
+    <h1 id="pageTitle"></h1>
+    <button id="logoutBtn" class="logout-btn hidden" type="button">로그아웃</button>
+  </header>
+  <section id="portal" class="portal-grid"></section>
+  <footer id="footer"></footer>
+</main>
+
+<script src="links.js"></script>
+<script src="script.js"></script>
+<script type="module" src="auth.js"></script>
+</body>
+</html>
