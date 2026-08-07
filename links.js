@@ -14,7 +14,7 @@ const PORTAL = {
       name: "교육과정 운영",
       color: "blue",
       items: [
-        { name: "학생알림 및 교육과정 자료", url: "https://docs.google.com/spreadsheets/d/1myE45NG1iVSf_fqiYAyB-u1Jgr83wTs5/edit?usp=sharing&ouid=114965997215962237212&rtpof=true&sd=true" },
+        { name: "학사일정 및 교육과정 자료", url: "https://docs.google.com/spreadsheets/d/1myE45NG1iVSf_fqiYAyB-u1Jgr83wTs5/edit?usp=sharing&ouid=114965997215962237212&rtpof=true&sd=true" },
         { name: "월중 교육활동 계획\n(2025-참고용)", url: "https://docs.google.com/spreadsheets/d/1b9fUjTBP21vUZ1aNLALdo64PDRQAawcrFX8qIWupimU/edit?usp=sharing" },
         { name: "2026학년도월중\n교육활동 계획", url: "https://docs.google.com/spreadsheets/d/1XacwFcdjuUubjuD3yTgMrD21L4H9Zc-B4Ini8RgzRRk/edit?usp=sharing" },
         { name: "기초시간표(전학년 및 전담)", url: "https://docs.google.com/spreadsheets/d/1uefsbbf5-NC8-GRLQ8Gwnczf1Fq6hER_2Fi1cJlU7Us/edit?usp=sharing" },
@@ -27,12 +27,12 @@ const PORTAL = {
       name: "교직원 안내",
       color: "purple",
       items: [
-        { name: "위임전결규정(25.03.25.)", url: "https://docs.google.com/spreadsheets/d/13Qf8H7-G9dLRL8mq45Vhtgipcu0DfKY6TRNLcI_VCsU/edit?usp=sharing", password: "0000" },
+        { name: "위임전결규정(25.03.25.)", url: "https://docs.google.com/spreadsheets/d/13Qf8H7-G9dLRL8mq45Vhtgipcu0DfKY6TRNLcI_VCsU/edit?usp=sharing" },
         { name: "결재라인", url: "https://docs.google.com/spreadsheets/d/11yF_7q8h-nFE5BRHWenOA6oyD_mowzU_aYEby31Yhc8/edit?usp=sharing" },
         { name: "출결 관리 안내 및\n학급별 출석서류 제출 현황", url: "https://docs.google.com/spreadsheets/d/1BPZ9E6E6y8Ls1u4NC13grFmytWOW8Oq-q4oigVOCdig/edit?usp=sharing" },
         { name: "결보강 계획서", url: "https://drive.google.com/drive/folders/10Sp6LXki2a-skw_7ou1VLU3W4ISrEtnV?usp=drive_link" },
         { name: "진주교육지원청\n배차 신청 안내", url: "https://docs.google.com/spreadsheets/d/1gC6p2s9JbXP1XPqSbwfAY1aatFuyEQnoiHIl3lQIGpE/edit?usp=sharing" },
-        { name: "학급 담임 및 업무분장표", url: "https://docs.google.com/spreadsheets/d/12KNGhMXvGBQfwH1XQvh_TLGregKl4doUQ1TSaH4TZcU/edit?usp=sharing" },
+        { name: "학급 담임 및 업무분장표", url: "https://docs.google.com/spreadsheets/d/12KNGhMXvGBQfwH1XQvh_TLGregKl4doUQ1TSaH4TZcU/edit?usp=sharing", password: "2151" },
         { name: "봉원 각종 위원회 현황", url: "https://docs.google.com/spreadsheets/d/1gouckupfvTsiawB9_1bOaJl09R7IQjbI/edit?usp=drive_link&ouid=114965997215962237212&rtpof=true&sd=true" },
         { name: "학생생활규정(26.9.1.시행)", url: "https://bongwon-p.gne.go.kr/bongwon-p/na/ntt/selectNttInfo.do?nttSn=100444656&mi=52340" },
         { name: "학교 규칙(25.10.1.개정)", url: "https://bongwon-p.gne.go.kr/bongwon-p/na/ntt/selectNttInfo.do?nttSn=90787155&mi=52340" },
